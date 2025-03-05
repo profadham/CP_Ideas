@@ -1,0 +1,14 @@
+problem: https://www.codechef.com/problems/DECOPAIR?tab=statement
+
+trick:
+
+assume I have k-1 indices i1, i2, i3, .... ik-1
+
+I want to add ik and calculate its contribution to the answer
+
+(assuming ik is added from right):
+contribution    = (ik-i1) + (ik-i2) + (ik-i3) + .. + (ik-ik-1)
+                = ik*(k-1) - (i1+i2+i3+....+ik-1)
+
+storing prefix sum of indices and number of occurences of the element will help directly
+compute the contribution of the new added element
