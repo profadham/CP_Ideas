@@ -1,0 +1,37 @@
+assume I have a set and I add numbers to the set by Mo
+
+I want to know in o(1) the number of elements having frequency at least k
+
+NAIVE SOLUTION:
+    one may think of having a frequency array and frequency array of the freq array and constructing a segment tree on it.
+    however this may tle
+
+NICE SOLUTION:
+    let the frequency array called f
+    and the freq of freq called ff
+    normal add and erase functions will look like:
+    add(x){
+        ff[f[x]]--;
+        f[x]++;
+        ff[f[x]]++;
+    }
+    remove(x){
+        ff[f[x]]--;
+        f[x]--;
+        ff[f[x]]++;
+    }
+
+    however if we changed them to look like:
+    add(x){
+        f[x]++;
+        ff[f[x]]++;
+    }
+    remove(x){
+        ff[f[x]]--;
+        f[x]--;
+    }
+
+    the answer will just be ff[f[k]]. 
+    when adding do not erase the old frequency 
+    when deleting do not add the new frequency as it was already found
+
