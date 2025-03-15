@@ -1,0 +1,10 @@
+assume I want to compute the following dp formula
+
+dp[i][n] = sum (dp[j][n-1]) for all j != i
+
+this can be done by storing the sum of the values of the dp at each n value. let tot[n] represent sum (dp[i][n])
+then if I want to compute dp[i][n] it is equal to tot[n-1]-dp[i][n-1]
+
+this can be applied to anything that have inverse like xor for example.
+
+see this: https://codeforces.com/problemset/problem/2070/D
