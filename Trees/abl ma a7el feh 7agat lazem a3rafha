@@ -1,0 +1,1 @@
+# removing a vertex from a tree -> the number of connected components will increase bu deg[u]-1
