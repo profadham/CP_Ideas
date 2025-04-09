@@ -10,5 +10,11 @@ for a:
 
 ##### pattern:   1 0 1
 
-then use # distance matching
+then use distance matching
+
+lets say I want to
+
+$$
+\sum_{i=1}^{n} i = \frac{n(n+1)}{2}
+$$
 
