@@ -28,4 +28,32 @@ for k = 1 this means we shifted the pattern
 
 ### so now we can know for each character for every index how many times this character matches if pattern is put at that index
 
+### inmplementation:
 
+```
+void string_match(string& s, string& patt) {
+    int n = (int)s.length(), m = (int)patt.length();
+
+    vector<ll> poly1(n), poly2(m);
+
+    vector<int> ans_match(n);
+
+    ll sh = m-1;
+    for (int i = 0; i < 26; ++i) {
+        for (int j = 0; j < n; ++j) {
+            poly1[j] = (s[j] - 'a') == i;
+        }
+        for (int j = 0; j < m; ++j) {
+            poly2[sh-j] = (patt[j] - 'a') == i;
+        }
+        vector<ll> ans = multiply(poly1, poly2);
+        for (int j = 0; j < n; ++j) {
+            ans_match[j] += ans[j];
+        }
+    }
+    for (ll i= 0; i <= n-m; i++) {
+        //cout << i + sh << " " << ans_match.size() << "\n";
+        cout << ans_match[sh+i] << " ";
+    }
+}
+```
