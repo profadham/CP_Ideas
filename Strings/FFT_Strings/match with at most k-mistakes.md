@@ -12,9 +12,9 @@ for a:
 
 then use distance matching
 
-lets say I want to
+lets say I want to find:
 
 $$
-\sum_{i=1}^{n} i = a[i]b[i]
+\sum_{i=1}^{n} a[i]b[i]
 $$
 
