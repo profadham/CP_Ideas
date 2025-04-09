@@ -1,0 +1,4 @@
+# note that in FFT we can use distance matching
+for example lets see this string:
+
+# acabergxa
